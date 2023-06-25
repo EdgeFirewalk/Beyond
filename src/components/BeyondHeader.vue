@@ -21,20 +21,20 @@ $headerMenuItemHoverColor: rgba(0, 0, 0, 0.5);
 .header {
   position: absolute;
   top: 5px;
-  left: 0;
   right: 0;
-}
-
-.header__logo {
-  font-size: $headerLogoFontSize;
-
-  text-transform: uppercase;
+  left: 0;
 }
 
 .header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.header__logo {
+  font-size: $headerLogoFontSize;
+
+  text-transform: uppercase;
 }
 
 .header__nav {
@@ -51,86 +51,24 @@ $headerMenuItemHoverColor: rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid transparent;
 }
 
+.header__menu-item:last-child {
+  margin-right: 0;
+}
+
 .header__menu-item:hover {
   color: $headerMenuItemHoverColor;
   border-bottom: 1px solid $headerMenuItemHoverColor;
 }
 
-// Mobile
-@media (min-width: 320px) {
-  $headerLogoFontSize: 25px;
-  $headerNavFontSize: 15px;
-
-  .header__logo {
-    font-size: $headerLogoFontSize;
+@media (max-width: 385px) {
+  .header__inner {
+    flex-direction: column;
   }
 
-  .header__menu-item {
-    margin: 0 5px;
-
-    font-size: $headerNavFontSize;
-  }
-}
-
-// Mobile landscape
-@media (min-width: 480px) {
-  $headerNavFontSize: 17px;
-
-  .header__menu-item {
-    font-size: $headerNavFontSize;
-  }
-}
-
-// Small tablets
-@media (min-width: 600px) {
-  $headerLogoFontSize: 28px;
-
-  .header__logo {
-    font-size: $headerLogoFontSize;
-  }
-}
-
-// Tablets portrait
-@media (min-width: 768px) {
-  $headerLogoFontSize: 30px;
-  $headerNavFontSize: 18px;
-
-  .header__logo {
-    font-size: $headerLogoFontSize;
-  }
-
-  .header__menu-item {
-    font-size: $headerNavFontSize;
-  }
-}
-
-// Tablets landscape / Netbooks
-@media (min-width: 1024px) {
-  $headerLogoFontSize: 35px;
-  $headerNavFontSize: 19px;
-
-  .header__logo {
-    font-size: $headerLogoFontSize;
-  }
-
-  .header__menu-item {
-    font-size: $headerNavFontSize;
-  }
-}
-
-// Desktop
-@media (min-width: 1280px) {
-  $headerLogoFontSize: 40px;
-  $headerNavFontSize: 20px;
-
-  .header__logo {
-    font-size: $headerLogoFontSize;
-
-    text-transform: uppercase;
-  }
-
-  .header__menu-item {
-    font-size: $headerNavFontSize;
+  .header__nav {
+    justify-content: space-evenly;
+    padding-top: 5px;
+    width: 100%;
   }
 }
 </style>
