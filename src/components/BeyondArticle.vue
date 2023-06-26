@@ -44,7 +44,7 @@ $secondArticleColor: rgba(0, 0, 0, 0.75);
 }
 
 .article:hover {
-  box-shadow: 0 0 5px $secondArticleColor;
+  box-shadow: 0 0 3px $secondArticleColor;
 }
 
 .article__img {

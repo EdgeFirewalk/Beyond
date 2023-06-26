@@ -2,7 +2,7 @@
   <header class='header'>
     <div class='container'>
       <div class='header__inner'>
-        <div class='header__logo'>Beyond</div>
+        <div class='header__logo' @click='this.$router.push(`/`)'>Beyond</div>
         <div class='header__nav'>
           <router-link class='header__menu-item' to='/'>Home</router-link>
           <router-link class='header__menu-item' to='/articles'>Articles</router-link>
@@ -35,6 +35,8 @@ $headerMenuItemHoverColor: rgba(0, 0, 0, 0.5);
   font-size: $headerLogoFontSize;
 
   text-transform: uppercase;
+
+  cursor: pointer;
 }
 
 .header__nav {

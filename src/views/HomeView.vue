@@ -23,6 +23,39 @@ $homeSubTitleFontSize: 120px;
 $homeSloganFontFamily: Calibri, sans-serif;
 $homeSloganFontSize: 25px;
 
+@-webkit-keyframes sub-title-underline {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    opacity: 1;
+  }
+}
+@keyframes sub-title-underline {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    opacity: 1;
+  }
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -50,13 +83,30 @@ $homeSloganFontSize: 25px;
 }
 
 .home__sub-title {
+  position: relative;
+
   padding-bottom: 15px;
 
   font-size: $homeSubTitleFontSize;
   text-transform: uppercase;
   line-height: 80px;
+}
 
-  border-bottom: 2px solid black;
+.home__sub-title::after {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: black;
+
+  content: '';
+  -webkit-animation: sub-title-underline 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  animation: sub-title-underline 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 .home__slogan {
@@ -114,6 +164,8 @@ $homeSloganFontSize: 25px;
   }
 
   .home__sub-title {
+    padding-bottom: 10px;
+
     font-size: $homeSubTitleFontSize;
   }
 
