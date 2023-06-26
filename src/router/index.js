@@ -20,6 +20,7 @@ const router = createRouter({
     {
       path: '/article/:id',
       name: 'article',
+      props: true,
       component: ArticleView
     },
     {

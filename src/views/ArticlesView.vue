@@ -45,7 +45,6 @@ export default {
   justify-content: center;
 }
 
-
 @media (max-width: 385px) {
   .article-list {
     top: 90px;

@@ -2,16 +2,16 @@
 export default {
   props: {
     id: { type: Number, required: true },
-    imageUrl: String,
-    title: String,
-    description: String,
-    publicationDate: String
+    imageUrl: { type: String, required: true },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    publicationDate: { type: String, required: true }
   }
 }
 </script>
 
 <template>
-  <router-link class='article' :to='`article/${id}`'>
+  <router-link class='article' :to="{name: 'article', params: {id: this.id}}">
     <img class='article__img' :src='imageUrl' alt='Article img'>
     <div class='article__right'>
       <p class='article__title'>{{ title }}</p>
@@ -73,5 +73,13 @@ $secondArticleColor: rgba(0, 0, 0, 0.75);
 .article__publication-date {
   font-size: $articleDateFontSize;
   text-align: right;
+}
+
+@media (max-width: 320px) {
+  $articleTitleFontSize: 19px;
+
+  .article__title {
+    font-size: $articleTitleFontSize;
+  }
 }
 </style>

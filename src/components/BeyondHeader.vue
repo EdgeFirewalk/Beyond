@@ -61,13 +61,17 @@ $headerMenuItemHoverColor: rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 385px) {
+  .header {
+    top: 3px;
+  }
+
   .header__inner {
     flex-direction: column;
   }
 
   .header__nav {
     justify-content: space-evenly;
-    padding-top: 5px;
+    padding-top: 3px;
     width: 100%;
   }
 }
