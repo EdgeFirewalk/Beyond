@@ -1,10 +1,12 @@
-<script>
-export default {
-  methods: {
-    logOut() {
-      localStorage.isLoggedIn = false
-    }
-  }
+<script setup>
+import BeyondButton from '@/components/BeyondButton.vue'
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+function logOut() {
+  localStorage.setItem('isLoggedIn', 'false')
+  router.go(0)
 }
 </script>
 
@@ -13,24 +15,26 @@ export default {
     <div class='container'>
       <div class='profile__inner'>
         <div class='profile__title'>Public profile</div>
-        <img class='profile__img' src='https://www.freeiconspng.com/thumbs/account-icon/account-icon-8.png' alt='Account img'>
+        <img class='profile__img' src='../assets/profile_icon.png' alt='Account img'>
         <div class='profile__name'>User</div>
         <div class='profile__creation-date'>Member since: 22.06.2023</div>
-        <button class='profile__log-out-button' @click='logOut'>Log out</button>
+        <beyond-button class='profile__log-out-button' @click='logOut'>Log out</beyond-button>
       </div>
     </div>
   </div>
 </template>
 
 <style lang='scss'>
-$profileTitleFontSize: 30px;
+@import '@/assets/scss/variables';
+@import '@/assets/scss/animations';
+
 $profileNameFontSize: 25px;
 
 $secondAccountColor: rgba(0, 0, 0, 0.75);
 
 .profile {
   position: absolute;
-  top: 60px;
+  top: $absSectionTopIndentDesktop;
   right: 0;
   left: 0;
 }
@@ -39,10 +43,16 @@ $secondAccountColor: rgba(0, 0, 0, 0.75);
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  -webkit-animation: profile-scale-in 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: profile-scale-in 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .profile__title {
-  font-size: $profileTitleFontSize;
+  margin-bottom: 15px;
+
+  font-size: $sectionTitleDesktopFontSize;
+  text-transform: uppercase;
   text-decoration: underline;
 }
 
@@ -50,7 +60,8 @@ $secondAccountColor: rgba(0, 0, 0, 0.75);
   width: 110px;
   height: 110px;
 
-  border-radius: 360px;
+  border: 2px solid $mainAppColor;
+  border-radius: 100%;
 
   object-fit: cover;
 }
@@ -62,27 +73,20 @@ $secondAccountColor: rgba(0, 0, 0, 0.75);
 }
 
 .profile__creation-date {
-  line-height: 8px;
+  margin-bottom: 10px;
+
+  line-height: 10px;
 
   color: $secondAccountColor;
 }
 
-.profile__log-out-button {
-  margin: 20px 0;
-  padding: 10px 15px;
+@media (max-width: 385px) {
+  .profile {
+    top: $absSectionTopIndentMobile;
+  }
 
-  font-size: $profileNameFontSize - 8px;
-
-  background-color: white;
-  border: 2px solid black;
-
-  transition-property: color, background-color;
-  transition-duration: 0.3s;
-  cursor: pointer;
-}
-
-.profile__log-out-button:hover {
-  color: white;
-  background-color: black;
+  .profile__title {
+    font-size: $sectionTitleMobileFontSize;
+  }
 }
 </style>

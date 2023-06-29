@@ -18,48 +18,18 @@
 </template>
 
 <style lang='scss' scoped>
+@import '@/assets/scss/variables';
+@import '@/assets/scss/animations';
+
 $homeTitleFontSize: 80px;
 $homeSubTitleFontSize: 120px;
-$homeSloganFontFamily: Calibri, sans-serif;
 $homeSloganFontSize: 25px;
-
-@-webkit-keyframes sub-title-underline {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    opacity: 1;
-  }
-}
-@keyframes sub-title-underline {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    opacity: 1;
-  }
-}
 
 .home {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: $minAppHeight;
   height: 100vh;
 
   text-align: center;
@@ -105,14 +75,14 @@ $homeSloganFontSize: 25px;
   background-color: black;
 
   content: '';
-  -webkit-animation: sub-title-underline 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-  animation: sub-title-underline 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  -webkit-animation: home-sub-title-underline 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  animation: home-sub-title-underline 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 .home__slogan {
   margin-top: 10px;
 
-  font-family: $homeSloganFontFamily;
+  font-family: $mainAppFontFamily;
   font-size: $homeSloganFontSize;
 }
 
@@ -131,8 +101,8 @@ $homeSloganFontSize: 25px;
   font-size: 18px;
   text-decoration: none;
 
-  color: black;
-  border-bottom: 1px solid black;
+  color: $mainAppColor;
+  border-bottom: 1px solid $mainAppColor;
 }
 
 @media (max-width: 768px) {
@@ -190,13 +160,6 @@ $homeSloganFontSize: 25px;
 
   .home__slogan {
     font-size: $homeSloganFontSize;
-  }
-}
-
-// Not sure if I should keep it here yet
-@media (max-height: 270px) {
-  .footer {
-    display: none;
   }
 }
 </style>

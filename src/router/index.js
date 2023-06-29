@@ -4,6 +4,7 @@ import ArticlesView from '@/views/ArticlesView.vue'
 import ArticleView from '@/views/ArticleView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import LoginView from '@/views/LoginView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,18 +28,26 @@ const router = createRouter({
     {
       path: '/profile',
       name: 'profile',
+      meta: { requiresAuth: true },
       component: ProfileView
     },
     {
       path: '/login',
       name: 'login',
       component: LoginView
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: NotFoundView
     }
   ]
 })
 
 router.beforeEach((to) => {
-  if (to.name === 'profile' && localStorage.isLoggedIn !== true) return { name: 'login' }
+  if (to.meta.requiresAuth && localStorage.getItem('isLoggedIn') !== 'true') {
+    return { path: '/login' }
+  }
 })
 
 export default router

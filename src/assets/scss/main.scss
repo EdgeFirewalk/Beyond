@@ -1,8 +1,13 @@
+@import 'variables';
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
+
+  color: $mainAppColor;
+
   box-sizing: border-box;
 }
 
@@ -12,10 +17,7 @@
 
 .container {
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 8px;
   width: 100%;
   max-width: 1200px;
-
-  //border-left: 1px solid red;
-  //border-right: 1px solid red;
 }

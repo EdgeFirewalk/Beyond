@@ -22,29 +22,32 @@ export default {
 </template>
 
 <style lang='scss' scoped>
-$articleBorderRadius: 15px;
-$articleTitleFontSize: 22px;
-$articleDateFontSize: 14px;
+@import '@/assets/scss/variables';
+@import '@/assets/scss/animations';
 
-$mainArticleColor: black;
-$secondArticleColor: rgba(0, 0, 0, 0.75);
+$articleTitleFontSize: 22px;
+$articleDescriptionFontSize: 19px;
+$articleDateFontSize: 15px;
 
 .article {
   display: flex;
   margin: 5px 0;
-  padding: 5px;
+  padding: 7px;
   width: 100%;
 
-  font-family: Calibri, sans-serif;
+  font-family: $secondAppFontFamily;
   text-decoration: none;
 
-  color: $mainArticleColor;
-  border: 1px solid $mainArticleColor;
-  border-radius: $articleBorderRadius;
+  color: $mainAppColor;
+  border: 2px solid $mainAppColor;
+
+  transition-property: transform, box-shadow;
+  transition-duration: 0.3s;
 }
 
 .article:hover {
-  box-shadow: 0 0 3px $secondArticleColor;
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px 0 $thirdAppColor;
 }
 
 .article__img {
@@ -52,9 +55,10 @@ $secondArticleColor: rgba(0, 0, 0, 0.75);
   width: 100px;
   height: 100px;
 
-  border-radius: $articleBorderRadius;
-
   object-fit: cover;
+
+  -webkit-animation: article-img-flip-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: article-img-flip-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .article__right {
@@ -64,22 +68,38 @@ $secondArticleColor: rgba(0, 0, 0, 0.75);
 .article__title {
   font-size: $articleTitleFontSize;
   font-weight: bold;
+  text-transform: uppercase;
+
+  -webkit-animation: text-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  animation: text-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 .article__description {
-  color: $secondArticleColor;
+  font-size: $articleDescriptionFontSize;
+
+  color: $thirdAppColor;
+
+  -webkit-animation: text-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  animation: text-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 .article__publication-date {
+  margin-top: 10px;
+
   font-size: $articleDateFontSize;
   text-align: right;
 }
 
 @media (max-width: 320px) {
-  $articleTitleFontSize: 19px;
+  $articleTitleFontSize: 20px;
+  $articleDescriptionFontSize: 18px;
 
   .article__title {
     font-size: $articleTitleFontSize;
+  }
+
+  .article__description {
+    font-size: $articleDescriptionFontSize;
   }
 }
 </style>

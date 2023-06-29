@@ -14,9 +14,10 @@
 </template>
 
 <style lang='scss' scoped>
+@import '@/assets/scss/variables';
+
 $headerLogoFontSize: 40px;
 $headerNavFontSize: 20px;
-$headerMenuItemHoverColor: rgba(0, 0, 0, 0.5);
 
 .header {
   position: absolute;
@@ -33,7 +34,6 @@ $headerMenuItemHoverColor: rgba(0, 0, 0, 0.5);
 
 .header__logo {
   font-size: $headerLogoFontSize;
-
   text-transform: uppercase;
 
   cursor: pointer;
@@ -44,13 +44,17 @@ $headerMenuItemHoverColor: rgba(0, 0, 0, 0.5);
 }
 
 .header__menu-item {
+  position: relative;
+
   margin: 0 5px;
 
   font-size: $headerNavFontSize;
   text-decoration: none;
 
-  color: black;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+
+  transition-property: border-color;
+  transition-duration: 0.2s;
 }
 
 .header__menu-item:last-child {
@@ -58,22 +62,17 @@ $headerMenuItemHoverColor: rgba(0, 0, 0, 0.5);
 }
 
 .header__menu-item:hover {
-  color: $headerMenuItemHoverColor;
-  border-bottom: 1px solid $headerMenuItemHoverColor;
+  border-color: $mainAppColor;
 }
 
 @media (max-width: 385px) {
-  .header {
-    top: 3px;
-  }
-
   .header__inner {
     flex-direction: column;
   }
 
   .header__nav {
-    justify-content: space-evenly;
-    padding-top: 3px;
+    justify-content: space-around;
+    padding-top: 5px;
     width: 100%;
   }
 }

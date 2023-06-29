@@ -16,6 +16,7 @@ export default {
   <div class='article-list'>
     <div class='container'>
       <div class='article-list__inner'>
+        <!-- TODO: Pass an object to article instead of all the properties -->
         <beyond-article
           v-for='article in articles'
           :key='article.id'
@@ -31,9 +32,11 @@ export default {
 </template>
 
 <style lang='scss' scoped>
+@import '@/assets/scss/variables';
+
 .article-list {
   position: absolute;
-  top: 65px;
+  top: $absSectionTopIndentDesktop;
   right: 0;
   left: 0;
 }
@@ -47,7 +50,7 @@ export default {
 
 @media (max-width: 385px) {
   .article-list {
-    top: 90px;
+    top: $absSectionTopIndentMobile;
   }
 }
 </style>
