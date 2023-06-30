@@ -117,7 +117,7 @@ $loginFormInputWidth: 85%;
   display: block;
 }
 
-@media (max-width: 385px) {
+@media (max-width: $minAppWidth) {
   .login-form__title {
     font-size: 18px;
   }

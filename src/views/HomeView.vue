@@ -151,7 +151,7 @@ $homeSloganFontSize: 25px;
   }
 }
 
-@media (max-width: 385px) {
+@media (max-width: $minAppWidth) {
   $homeTitleFontSize: 40px;
   $homeSubTitleFontSize: 70px;
   $homeSloganFontSize: 21px;

@@ -30,7 +30,7 @@
   font-size: 35px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: $minAppWidth) {
   .error__code {
     font-size: $sectionTitleDesktopFontSize;
   }

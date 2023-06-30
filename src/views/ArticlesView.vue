@@ -48,7 +48,7 @@ export default {
   justify-content: center;
 }
 
-@media (max-width: 385px) {
+@media (max-width: $minAppWidth) {
   .article-list {
     top: $absSectionTopIndentMobile;
   }

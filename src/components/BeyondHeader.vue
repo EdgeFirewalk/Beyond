@@ -65,7 +65,7 @@ $headerNavFontSize: 20px;
   border-color: $mainAppColor;
 }
 
-@media (max-width: 385px) {
+@media (max-width: $minAppWidth) {
   .header__inner {
     flex-direction: column;
   }

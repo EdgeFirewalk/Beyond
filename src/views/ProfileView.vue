@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 function logOut() {
   localStorage.setItem('isLoggedIn', 'false')
-  router.go(0)
+  router.push('/login')
 }
 </script>
 
@@ -80,7 +80,7 @@ $secondAccountColor: rgba(0, 0, 0, 0.75);
   color: $secondAccountColor;
 }
 
-@media (max-width: 385px) {
+@media (max-width: $minAppWidth) {
   .profile {
     top: $absSectionTopIndentMobile;
   }

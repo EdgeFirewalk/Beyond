@@ -82,7 +82,7 @@ export default {
   }
 }
 
-@media (max-width: 385px) {
+@media (max-width: $minAppWidth) {
   .detailed-article {
     top: $absSectionTopIndentMobile;
   }
