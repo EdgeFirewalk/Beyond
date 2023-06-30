@@ -1,15 +1,15 @@
 <template>
-  <div class='error'>
-    <div class='container'>
-      <div class='error__inner'>
-        <div class='error__code'>404</div>
-        <div class='error__text'>Looks like the page you were looking for does not exist</div>
+  <div class="error">
+    <div class="container">
+      <div class="error__inner">
+        <div class="error__code">404</div>
+        <div class="error__text">Looks like the page you were looking for does not exist</div>
       </div>
     </div>
   </div>
 </template>
 
-<style lang='scss'>
+<style lang="scss">
 @import '@/assets/scss/variables';
 
 .error {

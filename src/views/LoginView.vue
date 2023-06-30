@@ -15,47 +15,43 @@ function logIn() {
 
     localStorage.setItem('isLoggedIn', 'true')
     router.push('/profile')
-  }
-  else {
+  } else {
     isLogInFailed.value = true
   }
 }
 </script>
 
 <template>
-  <div class='login-form'>
-    <div class='container'>
-      <div class='login-form__inner'>
-        <div class='login-form__title'>Log in to your account</div>
+  <div class="login-form">
+    <div class="container">
+      <div class="login-form__inner">
+        <div class="login-form__title">Log in to your account</div>
         <input
-          class='login-form__login-input input'
-          v-model='login'
-          @input='isLogInFailed = false'
-          @keyup.enter='logIn'
-          type='text'
-          placeholder='Login'
-        >
+          class="login-form__login-input input"
+          v-model="login"
+          @input="isLogInFailed = false"
+          @keyup.enter="logIn"
+          type="text"
+          placeholder="Login"
+        />
         <input
-          class='login-form__password-input input'
-          v-model='password'
-          @input='isLogInFailed = false'
-          @keyup.enter='logIn'
-          type='password'
-          placeholder='Password'
-        >
-        <div
-          class='login-form__error-message'
-          :class='{"visible-message": isLogInFailed}'
-        >
+          class="login-form__password-input input"
+          v-model="password"
+          @input="isLogInFailed = false"
+          @keyup.enter="logIn"
+          type="password"
+          placeholder="Password"
+        />
+        <div class="login-form__error-message" :class="{ 'visible-message': isLogInFailed }">
           Wrong login or password!
         </div>
-        <beyond-button @click='logIn'>Log in</beyond-button>
+        <beyond-button @click="logIn">Log in</beyond-button>
       </div>
     </div>
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 @import '@/assets/scss/variables';
 @import '@/assets/scss/animations';
 
@@ -81,8 +77,8 @@ $loginFormInputWidth: 85%;
 
   border: 2px solid $mainAppColor;
 
-  -webkit-animation: login-form-scale-up 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: login-form-scale-up 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: login-form-scale-up 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: login-form-scale-up 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .login-form__title {

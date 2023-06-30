@@ -4,7 +4,7 @@ import BeyondHeader from '@/components/BeyondHeader.vue'
 
 <template>
   <div>
-    <beyond-header/>
-    <router-view/>
+    <beyond-header />
+    <router-view />
   </div>
 </template>

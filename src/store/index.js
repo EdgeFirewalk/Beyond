@@ -6,7 +6,8 @@ const store = createStore({
       articles: [
         {
           id: 1,
-          imageUrl: 'https://hips.hearstapps.com/hmg-prod/images/domestic-cat-lies-in-a-basket-with-a-knitted-royalty-free-image-1592337336.jpg?crop=0.668xw:1.00xh;0.247xw,0&resize=1200:*',
+          imageUrl:
+            'https://hips.hearstapps.com/hmg-prod/images/domestic-cat-lies-in-a-basket-with-a-knitted-royalty-free-image-1592337336.jpg?crop=0.668xw:1.00xh;0.247xw,0&resize=1200:*',
           title: 'British scientists found a way to talk to cats',
           description: 'There is a potentially effective way for us to understand our pets!',
           publicationDate: '25.06.2023',
@@ -16,13 +17,15 @@ const store = createStore({
           id: 2,
           imageUrl: 'https://prof-mk.ru/wp-content/uploads/2020/12/lorem-ipsum-tekst-ryba.png',
           title: 'Lorem Ipsum',
-          description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+          description:
+            'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
           publicationDate: '05.03.2023',
           text: 'Maecenas viverra vel velit ut dapibus. Integer sed nunc arcu. Fusce facilisis leo non tempus consectetur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque semper semper feugiat. Donec laoreet risus orci. Donec ultrices tincidunt ligula sed varius. Suspendisse accumsan odio nec magna egestas, at sollicitudin mauris dignissim. Mauris vel eros purus. Nam in ligula et est laoreet consectetur fermentum eu sapien. Proin blandit elit eu eros commodo venenatis. Ut vehicula consequat purus, quis ultricies augue venenatis eu. Ut iaculis rhoncus felis. Mauris interdum congue nibh, non rutrum ligula tempor ut. In et odio iaculis, hendrerit purus nec, laoreet nunc. Pellentesque aliquam aliquet ex. Duis pharetra quam arcu, eu egestas est convallis sit amet. Suspendisse potenti. Curabitur lacus velit, dictum ac ultricies at, pellentesque lobortis turpis. Nam id tellus eu nisl commodo fermentum id in erat. Donec neque nisi, venenatis id pretium et, mattis vel ante. Donec lectus mi, dapibus at risus non, egestas molestie eros. Quisque rhoncus mollis faucibus.'
         },
         {
           id: 3,
-          imageUrl: 'https://cdn5.idcgames.com/storage/image/1333/game_home_bg_section_2/default.jpg',
+          imageUrl:
+            'https://cdn5.idcgames.com/storage/image/1333/game_home_bg_section_2/default.jpg',
           title: 'We may not be completely alone by now...',
           description: '⎅⟒⌇☊⍀⟟⌿⏁⟟⍜⋏ ⟟⌇ ⋏⍜⏁ ⌿⍀⍜⎐⟟⎅⟒⎅',
           publicationDate: '☊⍀.03.⋏⍜⏁⍜',

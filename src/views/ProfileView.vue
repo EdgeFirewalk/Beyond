@@ -11,20 +11,20 @@ function logOut() {
 </script>
 
 <template>
-  <div class='profile'>
-    <div class='container'>
-      <div class='profile__inner'>
-        <div class='profile__title'>Public profile</div>
-        <img class='profile__img' src='../assets/profile_icon.png' alt='Account img'>
-        <div class='profile__name'>User</div>
-        <div class='profile__creation-date'>Member since: 22.06.2023</div>
-        <beyond-button class='profile__log-out-button' @click='logOut'>Log out</beyond-button>
+  <div class="profile">
+    <div class="container">
+      <div class="profile__inner">
+        <div class="profile__title">Public profile</div>
+        <img class="profile__img" src="../assets/profile_icon.png" alt="Account img" />
+        <div class="profile__name">User</div>
+        <div class="profile__creation-date">Member since: 22.06.2023</div>
+        <beyond-button class="profile__log-out-button" @click="logOut">Log out</beyond-button>
       </div>
     </div>
   </div>
 </template>
 
-<style lang='scss'>
+<style lang="scss">
 @import '@/assets/scss/variables';
 @import '@/assets/scss/animations';
 
@@ -44,8 +44,8 @@ $secondAccountColor: rgba(0, 0, 0, 0.75);
   flex-direction: column;
   align-items: center;
 
-  -webkit-animation: profile-scale-in 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: profile-scale-in 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: profile-scale-in 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: profile-scale-in 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .profile__title {

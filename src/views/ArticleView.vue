@@ -6,28 +6,29 @@ export default {
   data() {
     return {
       // TODO: Change this mess...
-      selectedArticle: this.$store.state.articles.find(art => art.id === parseInt(this.id)) !== undefined ?
-        this.$store.state.articles.find(art => art.id === parseInt(this.id)) :
-        this.$router.push({ name: 'not-found'})
+      selectedArticle:
+        this.$store.state.articles.find((art) => art.id === parseInt(this.id)) !== undefined
+          ? this.$store.state.articles.find((art) => art.id === parseInt(this.id))
+          : this.$router.push({ name: 'not-found' })
     }
   }
 }
 </script>
 
 <template>
-  <div class='detailed-article'>
-    <div class='container'>
-      <div class='detailed-article__inner'>
-        <div class='detailed-article__title'>{{ selectedArticle.title }}</div>
-        <div class='detailed-article__date'>{{ selectedArticle.publicationDate }}</div>
-        <img class='detailed-article__img' :src='selectedArticle.imageUrl' alt='Article img'>
-        <div class='detailed-article__text'>{{ selectedArticle.text }}</div>
+  <div class="detailed-article">
+    <div class="container">
+      <div class="detailed-article__inner">
+        <div class="detailed-article__title">{{ selectedArticle.title }}</div>
+        <div class="detailed-article__date">{{ selectedArticle.publicationDate }}</div>
+        <img class="detailed-article__img" :src="selectedArticle.imageUrl" alt="Article img" />
+        <div class="detailed-article__text">{{ selectedArticle.text }}</div>
       </div>
     </div>
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 @import '@/assets/scss/variables';
 @import '@/assets/scss/animations';
 
@@ -44,8 +45,8 @@ export default {
   text-transform: uppercase;
   text-decoration: underline;
 
-  -webkit-animation: text-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-  animation: text-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  -webkit-animation: text-expand 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: text-expand 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
 .detailed-article__date {

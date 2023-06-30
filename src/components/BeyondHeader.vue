@@ -1,19 +1,19 @@
 <template>
-  <header class='header'>
-    <div class='container'>
-      <div class='header__inner'>
-        <div class='header__logo' @click='this.$router.push(`/`)'>Beyond</div>
-        <div class='header__nav'>
-          <router-link class='header__menu-item' to='/'>Home</router-link>
-          <router-link class='header__menu-item' to='/articles'>Articles</router-link>
-          <router-link class='header__menu-item' to='/profile'>Profile</router-link>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo" @click="this.$router.push(`/`)">Beyond</div>
+        <div class="header__nav">
+          <router-link class="header__menu-item" to="/">Home</router-link>
+          <router-link class="header__menu-item" to="/articles">Articles</router-link>
+          <router-link class="header__menu-item" to="/profile">Profile</router-link>
         </div>
       </div>
     </div>
   </header>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 @import '@/assets/scss/variables';
 
 $headerLogoFontSize: 40px;
