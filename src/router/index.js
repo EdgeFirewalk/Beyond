@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ArticlesView from '@/views/ArticlesView.vue'
 import ArticleView from '@/views/ArticleView.vue'
@@ -7,7 +7,7 @@ import LoginView from '@/views/LoginView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(), // Is used since GitHub Pages does not fully support SPA with routing (or smth)
   routes: [
     {
       path: '/',
