@@ -16,16 +16,7 @@ export default {
   <div class="article-list">
     <div class="container">
       <div class="article-list__inner">
-        <!-- TODO: Pass an object to article instead of all the properties -->
-        <beyond-article
-          v-for="article in articles"
-          :key="article.id"
-          :id="article.id"
-          :image-url="article.imageUrl"
-          :title="article.title"
-          :description="article.description"
-          :publication-date="article.publicationDate"
-        />
+        <beyond-article v-for="article in articles" :key="article.id" :articleObj="article" />
       </div>
     </div>
   </div>

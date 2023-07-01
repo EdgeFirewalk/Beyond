@@ -5,7 +5,6 @@ export default {
   },
   data() {
     return {
-      // TODO: Change this mess...
       selectedArticle:
         this.$store.state.articles.find((art) => art.id === parseInt(this.id)) !== undefined
           ? this.$store.state.articles.find((art) => art.id === parseInt(this.id))

@@ -1,22 +1,18 @@
 <script>
 export default {
   props: {
-    id: { type: Number, required: true },
-    imageUrl: { type: String, required: true },
-    title: { type: String, required: true },
-    description: { type: String, required: true },
-    publicationDate: { type: String, required: true }
+    articleObj: { type: Object, required: true }
   }
 }
 </script>
 
 <template>
-  <router-link class="article" :to="{ name: 'article', params: { id: this.id } }">
-    <img class="article__img" :src="imageUrl" alt="Article img" />
+  <router-link class="article" :to="{ name: 'article', params: { id: this.articleObj.id } }">
+    <img class="article__img" :src="articleObj.imageUrl" alt="Article img" />
     <div class="article__right">
-      <p class="article__title">{{ title }}</p>
-      <p class="article__description">{{ description }}</p>
-      <p class="article__publication-date">{{ publicationDate }}</p>
+      <p class="article__title">{{ articleObj.title }}</p>
+      <p class="article__description">{{ articleObj.description }}</p>
+      <p class="article__publication-date">{{ articleObj.publicationDate }}</p>
     </div>
   </router-link>
 </template>
