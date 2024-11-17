@@ -1,7 +1,5 @@
 # Beyond Article App
 The only place where you can see news from all over the world and beyond.<br>
-<br>
-The app is avaliable here: https://edgefirewalk.github.io/Beyond-Article-App
 
 ## My first ever Vue project!
 It was completed as a part of educational practice at the university. The idea was to create a news app with Vue 3 using Vue Router, Vuex and SCSS (which are new to me). I also had to implement fictional authorization and use localStorage to save information about user being logged in.
